@@ -14,6 +14,28 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
+    // Mobile menu toggle
+    const menuToggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('nav');
+    
+    if (menuToggle) {
+        menuToggle.addEventListener('click', function() {
+            nav.classList.toggle('nav-active');
+            this.classList.toggle('active');
+        });
+        
+        // Close mobile menu when clicking a link
+        const navLinks = document.querySelectorAll('nav ul li a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                if (nav.classList.contains('nav-active')) {
+                    nav.classList.remove('nav-active');
+                    menuToggle.classList.remove('active');
+                }
+            });
+        });
+    }
+
     // Handle the contact form submission
     const contactForm = document.querySelector('.contact-form');
     if (contactForm) {

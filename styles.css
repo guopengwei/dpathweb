@@ -111,6 +111,19 @@ nav ul li a.btn-primary {
     color: var(--text-light);
 }
 
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    font-size: 28px;
+}
+
+.menu-toggle.active span {
+    color: var(--primary-color);
+}
+
 /* Hero Section */
 .hero {
     padding: 6rem 0 4rem;
@@ -518,6 +531,131 @@ footer {
     
     .social-icons {
         justify-content: flex-start;
+    }
+
+    /* Header mobile optimization */
+    header .container {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 1rem 0;
+    }
+    
+    .logo {
+        margin-bottom: 0;
+    }
+    
+    .menu-toggle {
+        display: block;
+        z-index: 10;
+    }
+    
+    nav {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 70%;
+        height: 100vh;
+        background-color: var(--card-bg);
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+        transition: right 0.3s ease;
+        z-index: 9;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    nav.nav-active {
+        right: 0;
+    }
+    
+    nav ul {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    nav ul li {
+        margin: 1.5rem 0;
+    }
+    
+    /* Hero section mobile optimization */
+    .hero {
+        padding: 3rem 0 2rem;
+    }
+    
+    .hero-content h1 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+    
+    .hero-content p {
+        font-size: 1rem;
+    }
+    
+    .coming-soon {
+        padding: 1.5rem;
+    }
+    
+    /* Features section mobile optimization */
+    .feature-card {
+        padding: 1.8rem;
+    }
+    
+    /* Form mobile optimization */
+    .contact-form {
+        padding: 2rem 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        width: 95%;
+        padding: 0 10px;
+    }
+    
+    nav ul li {
+        margin-left: 0.5rem;
+        margin-right: 0.5rem;
+    }
+    
+    nav ul li a {
+        font-size: 0.9rem;
+    }
+    
+    .hero-content h1 {
+        font-size: 1.8rem;
+    }
+    
+    .hero-image {
+        display: none;
+    }
+    
+    .feature-grid,
+    .persona-grid {
+        gap: 1.5rem;
+    }
+    
+    .feature-card,
+    .persona-card {
+        padding: 1.5rem;
+    }
+    
+    .feature-card h3,
+    .persona-card h3 {
+        font-size: 1.1rem;
+    }
+    
+    .feature-card p,
+    .persona-card p {
+        font-size: 0.9rem;
+    }
+    
+    .contact-form {
+        padding: 1.5rem 1rem;
+    }
+    
+    footer {
+        padding: 2rem 0 1rem;
     }
 }
 
